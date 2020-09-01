@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  <div class="container">
+    {{ form.username |as_crispy_field}}
+    {{ form.password |as_crispy_field}}
+    <div class="form-group text-right" style="padding:20px 0">
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+  </div>
+  </div>
+</form>
+
+  <center><a href="{% url 'signup' %}">サインアップ</a>してない方はこちらから</center>
+  {% endblock %}

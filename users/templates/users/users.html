@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+  <br>
+    <header>
+        <div>
+            <center><h1>ユーザー一覧</h1></center>
+            <br>
+        </div>
+    </header>
+</div>
+
+<div>
+  <div>
+    <div class="container">
+      <p><strong>参加人数 : {{custom_user.count}}人</strong></p>
+    </div>
+  </div>
+</div>
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">学籍番号</th>
+        <th scope="col">順位</th>
+        <th scope="col">研究室</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for u in custom_user %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{u.num}}</td>
+            {% if user == u %}
+            <td>{{user.user_profile.rank}}</td>
+            <td>{{user.user_profile.belongs1.name}}</td>
+            {% else %}
+            <td>-----</td>
+            <td>-----</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

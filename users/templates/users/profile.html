@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+    <header>
+        <div>
+            <center><h1>プロフィールの変更</h1></center>
+        </div>
+    </header>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="container">
+        {{ form.belongs1 |as_crispy_field}}
+        {{ form.belongs2 |as_crispy_field}}
+        {{ form.belongs3 |as_crispy_field}}
+        {{ form.rank |as_crispy_field}}
+        <div class="form-group text-right" style="padding:20px 0">
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

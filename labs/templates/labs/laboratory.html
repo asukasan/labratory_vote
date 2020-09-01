@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load rank_count %}
+
+{% block content %}
+<div>
+    <header>
+        <div>
+            <center><h1>研究室一覧</h1></center>
+        </div>
+    </header>
+</div>
+
+<div class="container">
+    {% for l in labs %}
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#{{l.name}}" aria-expanded="false" aria-controls="{{l.name}}">
+                    {{l.name}}
+                </button>
+                </h2>
+            </div>
+      
+        <div id="{{l.name}}" class="collapse" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">第一希望 : {{l.belongs1.count}}票</div>
+                        {% if user.user_profile.belongs1 == l %}
+                        <div class="col">
+                            第一希望内で{{ user.user_profile.rank | count:l.belongs1.all }}位
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="col">第二希望 : {{l.belongs2.count}}票</div>
+                        {% if user.user_profile.belongs2 == l %}
+                        <div class="col">
+                            第一希望内で{{ user.user_profile.rank | count:l.belongs2.all }}位
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="col">第三希望 : {{l.belongs3.count}}票</div>
+                        {% if user.user_profile.belongs3 == l %}
+                        <div class="col">
+                            第一希望内で{{ user.user_profile.rank | count:l.belongs3.all }}位
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

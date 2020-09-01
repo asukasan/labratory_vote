@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+    <header>
+        <div>
+            <br>
+            <center><h1>問合せフォーム</h1></center>
+            <br>
+        </div>
+    </header>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="container">
+        {{ form.text |as_crispy_field}}
+        <div class="form-group text-right" style="padding:20px 0">
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}
+
