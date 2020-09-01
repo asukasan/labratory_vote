@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'vote.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'vote_prorype',
+        'NAME': 'vote_prototype',
         'USER': 'username',
         'PASSWORD': 'password',
         'HOST': '127.0.0.1',
