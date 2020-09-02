@@ -14,6 +14,8 @@ from pathlib import Path
 
 import dj_database_url
 
+from django.contrib.messages import constants as messages
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -154,3 +156,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}

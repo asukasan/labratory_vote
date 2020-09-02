@@ -43,6 +43,7 @@ class InquiryView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, '問合せのメッセージを管理者に送りました。')
         return super().form_valid(form)
 
 class LoginView(TemplateView):
