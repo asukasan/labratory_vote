@@ -57,5 +57,5 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-class ExplanationView(LoginRequiredMixin, TemplateView):
+class ExplanationView(TemplateView):
     template_name = 'users/explanation.html'    
