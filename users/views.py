@@ -25,7 +25,7 @@ class UserListView(LoginRequiredMixin, ListView):
     context_object_name = 'custom_user'
 
     def get_queryset(self):
-        return self.model.objects.order_by('-num')
+        return self.model.objects.order_by('num')
 
 class ProfileView(LoginRequiredMixin, UpdateView):
     model = Profile
