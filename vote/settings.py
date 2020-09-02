@@ -83,8 +83,6 @@ DATABASES = {
         'NAME': 'vote_prototype',
         'USER': 'username',
         'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
     }
 }
 
