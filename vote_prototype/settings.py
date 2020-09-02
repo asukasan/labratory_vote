@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'vote_prototype.urls'
+ROOT_URLCONF = 'vote_prototype5.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vote_prototype.wsgi.application'
+WSGI_APPLICATION = 'vote_prototype5.wsgi.application'
 
 
 # Database
