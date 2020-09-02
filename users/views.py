@@ -52,10 +52,10 @@ class LoginView(TemplateView):
     form_class = LoginForm
 
 
-        
-
-
 
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+class ExplanationView(LoginRequiredMixin, TemplateView):
+    template_name = 'users/explanation.html'    

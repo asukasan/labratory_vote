@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from users.views import UserListView, SignUpView, logout_view
+from users.views import UserListView, SignUpView, logout_view, ExplanationView
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -13,6 +13,7 @@ urlpatterns = [
     path('', UserListView.as_view(), name='home'),
     path('users/', include('users.urls')),
     path('', include('labs.urls')),
+    path('explanation/', ExplanationView.as_view(), name='explanation'),
 ]
 
 
