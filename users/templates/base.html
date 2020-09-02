@@ -12,6 +12,7 @@
     <title>研究室の投票</title>
   </head>
   <body>
+    {% if messages %}
     <div class="card mb-3">
       <div class="card-body">
         {% for message in messages %}
@@ -22,10 +23,9 @@
             </button>
           </div>
         {% endfor %}
-        {% block content %}
-        {% endblock %}
       </div>
     </div>
+    {% endif %}
     {% include 'includes/nav.html' %}
     {% block content %}
     {% endblock %}

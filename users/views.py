@@ -15,6 +15,7 @@ class SignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
+        messages.success(self.request, 'ユーザーを作成しました。')
         return redirect('home')
             
 
@@ -50,8 +51,8 @@ class LoginView(TemplateView):
     template_name = 'registration/login.html'  
     form_class = LoginForm
 
-    def form_valid():
-        pass
+
+        
 
 
 
