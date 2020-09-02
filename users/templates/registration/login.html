@@ -3,6 +3,17 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
+<div>
+  <header>
+      <div>
+          <br>
+          <center><h1>ログイン</h1></center>
+          <br>
+      </div>
+  </header>
+</div>
+
 <form method="post" novalidate>
   {% csrf_token %}
   <div class="container">
