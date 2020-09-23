@@ -91,7 +91,7 @@ DATABASES = {
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 #db追記
